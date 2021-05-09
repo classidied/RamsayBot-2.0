@@ -63,31 +63,16 @@ client.on('message', message => {
       message.channel.send(exampleEmbed); // sending the help page
 	}
     // insult 
-  if (message.content === '~insult') {
-		// message.channel.send('Pong.');
-	}
+    if (message.content === '~insult') {
+      // message.channel.send('Pong.');
+    }
     // encourage
-  if (message.content === '~encourage') {
-		// message.channel.send('Pong.');
-	}
     // recipe
-  if (message.content === '~recipe') {
-		// message.channel.send('Pong.');
-	}
     // swearjar
-  if (message.content === '~swearjar') {
-		// message.channel.send('Pong.');
-	}
     // userinfo
-  if (message.content === '~userinfo') {
-		// message.channel.send('Pong.');
-	}
 
     // image functions
     // alarm
-    if (message.content === '~alarm') {
-      // message.channel.send('Pong.');
-    }
     // idiot sandwich
     // finally, some good [redacted] food
     // deepfry
