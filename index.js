@@ -1,5 +1,6 @@
 /**
  * RamsayBot - The Best Gordon Ramsay-themed Discord Bot.
+ * Sources: https://discordjs.guide/
  */
 // require the discord.js module
 const Discord = require('discord.js');
@@ -25,12 +26,15 @@ client.on('message', message => {
 		  const exampleEmbed = new Discord.MessageEmbed()
         .setColor('#2596be') // find different embed color maybe? 
         .setTitle('Hello! I\'m Gordon Ramsay!')
+        // @helia and rainbow, make sure your project folder is named RamsayBot-2.0 or this won't work for you
         .attachFiles(['..\\RamsayBot-2.0\\images\\chad.png'])
         .attachFiles(['..\\RamsayBot-2.0\\images\\located.jpg']) 
         .setAuthor('Gordon Ramsay', 'attachment://chad.png')
         .setDescription('The Best Gordon Ramsay-themed bot. My prefix is `~`, and now I will always be with you.')
         .setThumbnail('attachment://located.jpg')
         .addFields(
+            { name: 'note:', value: 
+              'only help works right now hah'},
             { name: '**Text Commands**', value: 
               '`insult` - self explanatory' + 
               '\n`encourage` - pretend that someone cares about you' + 
@@ -42,7 +46,7 @@ client.on('message', message => {
               '\n`idiot <@member>` - sandwich :)' +
               '\n`finally <@member1> <@member2>` - some good f`--` food' +
               '\n`you <@member1> (up to 4 different members)` - :flushed:' +
-              '\n`raw <@member> ` - it\'s still mooing' +
+              '\n`raw <@member> ` - it\'s still mooing!' +
               '\n`deepfry <@member> ` - classic deepfry' +
               '\n`lambsauce <keyword>` - you\'ll like this one, I promise'
             },
@@ -54,7 +58,7 @@ client.on('message', message => {
               '\n`userinfo <@member>` - display user information'
             },
             { name: '**Misc**', value: 
-              'There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?'}
+              '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?'}
         )
       message.channel.send(exampleEmbed); // sending the help page
 	}
