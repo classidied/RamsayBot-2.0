@@ -19,7 +19,7 @@ client.login('ODM1MjQ1OTU2NTk2NjI5NTI0.YIMpag.TxiL2tmJkRUS6lXEWBWdC_dBCiI');
 
 // logs every message sent to the server
 client.on('message', message => {
-    //on-command functions
+    // on-command functions
     // help page
     // insult 
     // encourage
@@ -27,13 +27,15 @@ client.on('message', message => {
     // alarm
     // swearjar
     // userinfo
+
+    // image functions
     // idiot sandwich
     // finally, some good [redacted] food
     // deepfry
     // "you, you, you, you-"
     // music reviews
 
-    //theoretically (not even but whatever) non-controllable functions
+    // theoretically (not even but whatever) non-controllable functions
     // joe catch
     // bad math catch + insult
     // lamb 
