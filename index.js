@@ -26,6 +26,7 @@ client.on('message', message => {
     // recipe
     // alarm
     // swearjar
+    // userinfo
     // idiot sandwich
     // finally, some good [redacted] food
     // deepfry
