@@ -21,7 +21,7 @@ client.login('ODM1MjQ1OTU2NTk2NjI5NTI0.YIMpag.TxiL2tmJkRUS6lXEWBWdC_dBCiI');
 // logs every message sent to the server
 client.on('message', message => {
     // on-command functions
-    // help page
+    // help page ***add pg13, censor toggle (WITH RAMSAY'S ALTERNATIVES LIKE SHIT -> SHITTAKE MUSHROOMS)-> with toggle on, use current sheets
     if (message.content === '~help') {
 		  const exampleEmbed = new Discord.MessageEmbed()
         .setColor('#2596be') // find different embed color maybe? 
@@ -58,7 +58,9 @@ client.on('message', message => {
               '\n`userinfo <@member>` - display user information'
             },
             { name: '**Misc**', value: 
-              '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?'}
+              '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
+              '\n2. Who\'s joe?'
+            }
         )
       message.channel.send(exampleEmbed); // sending the help page
 	}
