@@ -15,13 +15,12 @@
  */
 /*
 - functions that need to be implemented:
-    // text/just not images: recipe, swearjar, userinfo, music reviews
+    // text/just not images: swearjar, userinfo, music reviews
 
-    // image/video functions: alarm, idiot sandwich, finally, some good [redacted] food,
+    // image/video functions: idiot sandwich, finally, some good [redacted] food,
         deepfry, "you, you, you, you-", raw
 
-    // theoretically (not even but whatever) non-controllable functions: joe catch
-        bad math catch + insult, lamb, bruh, eat, sosig
+    // theoretically (not even but whatever) non-controllable functions: bad math catch + insult
 - additions:
     - pg13 toggle -> current insult sheets are clean cause of yrhacks
     - censor with funnies toggle -> maybe use ramsay's substitutions (ex. 'shit' -> 'shiitake mushrooms')

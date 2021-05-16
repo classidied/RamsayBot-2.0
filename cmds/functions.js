@@ -55,5 +55,10 @@ function read(path, message, args) {
     })
 }
 
+// getting user avatar function
+function avatar(tag) {
+
+}
+
 // exporting methods
-module.exports = { r, read };
+module.exports = { r, read, avatar };
