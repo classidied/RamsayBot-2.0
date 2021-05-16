@@ -21,7 +21,14 @@ client.login('ODM1MjQ1OTU2NTk2NjI5NTI0.YIMpag.TxiL2tmJkRUS6lXEWBWdC_dBCiI');
 // logs every message sent to the server
 client.on('message', message => {
     // on-command functions
-    // help page ***add pg13, censor toggle (WITH RAMSAY'S ALTERNATIVES LIKE SHIT -> SHITTAKE MUSHROOMS)-> with toggle on, use current sheets
+    
+    // help page
+    /*
+    additions:
+    - pg13 toggle
+    - censor toggle 
+      - (WITH RAMSAY'S ALTERNATIVES LIKE SHIT -> SHITTAKE MUSHROOMS)-> with toggle on, use current sheets
+    */
     if (message.content === '~help') {
 		  const exampleEmbed = new Discord.MessageEmbed()
         .setColor('#2596be') // find different embed color maybe? 
@@ -61,14 +68,35 @@ client.on('message', message => {
               '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
               '\n2. Who\'s joe?'
             }
-        )
-      message.channel.send(exampleEmbed); // sending the help page
-	}
+          )
+        message.channel.send(exampleEmbed); // sending the help page
+    }
+    // random function
+    function r(num) {
+      return Math.floor(Math.random()*num);
+    }
+    // reading files function
+    function read(path) {
+      const fs = require('fs')
+      // reading from file
+      fs.readFile(path, 'utf8' , (err, data) => {
+        if (err) {
+          console.error(err)
+          return
+        }
+        var lines = data.split('\n');
+        var chosen = lines[r(lines.length)]
+        message.channel.send(chosen);
+      })
+    }
     // insult 
     if (message.content === '~insult') {
-      // message.channel.send('Pong.');
+      read('..\\RamsayBot-2.0\\data\\insults.csv');
     }
     // encourage
+    if (message.content === '~encourage') {
+      read('..\\RamsayBot-2.0\\data\\encouragements.csv');
+    }
     // recipe
     // swearjar
     // userinfo
