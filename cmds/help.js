@@ -9,17 +9,17 @@ module.exports = {
         .setTitle('Hello! I\'m Gordon Ramsay!')
         // @collaborators, make sure your project folder is named RamsayBot-2.0 or this won't work for you
         .attachFiles(['..\\RamsayBot-2.0\\images\\chad.png'])
-        .attachFiles(['..\\RamsayBot-2.0\\images\\located.jpg']) 
+        .attachFiles(['..\\RamsayBot-2.0\\images\\lamb.jpg']) 
         .setAuthor('Gordon Ramsay', 'attachment://chad.png')
         .setDescription('The Best Gordon Ramsay-themed bot. My prefix is `~`, and now I will always be with you.')
-        .setThumbnail('attachment://located.jpg')
+        .setThumbnail('attachment://lamb.jpg')
         .addFields(
             { name: 'note:', value: // pfftt rip
               'functions that have asterisks next to them do not work'},
             { name: '**Text Commands**', value: 
               '`insult` - self explanatory' + 
               '\n`encourage` - pretend that someone cares about you' + 
-              '\n`recipe* <optional-keyword>` - I send you my very own recipes!' +
+              '\n`recipe <optional-keyword>` - I send you my very own recipes!' +
               '\n`swearjar* <@member>` - figure out who needs to be put under cuss control'
             },
             { name: '**Image Generation***', value: 
@@ -38,9 +38,10 @@ module.exports = {
               '`help` - display this help page' + 
               '\n`userinfo <@member>` - display user information'
             },
-            { name: '**Misc***', value: 
+            { name: '**Misc**', value: 
               '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
-              '\n2. Who\'s joe?'
+              '\n2. Who\'s joe?*' +
+              '\n3. You suck at math'
             }
           )
         message.channel.send(exampleEmbed); // sending the help page

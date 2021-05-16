@@ -53,6 +53,9 @@ client.login(process.env.RAMSAYBOT_TOKEN);
 
 // logs every message sent to the server
 client.on('message', message => {
+    /**
+     * Controllable/functions with a prefix
+     */
     // splitting up the message by prefix, command, and arguments
     if (message.content.startsWith(PREFIX)) {
         // parsing commands
@@ -63,7 +66,9 @@ client.on('message', message => {
             // regex to eliminate extra spaces
             .split(/\s+/)
         ; 
-       
+        // testing: logging args to console
+        console.log(args);
+
         // there's probably a better way to do this but it's this for now
         if (cmd === 'help') {
             client.commands.get('help').execute(message);
@@ -74,6 +79,37 @@ client.on('message', message => {
         } else if (cmd === 'recipe') {
             // concat args for recipe
             client.commands.get('recipe').execute(message, args.join());
+        } else if (cmd === 'alarm') {
+            client.commands.get('alarm').execute(message, args);
         }
     }
+    /**
+     * Non-controllable/functions without a prefix
+     */
+
+    // image reactions
+    {
+        if (message.content.toLowerCase().includes('bruh')) {
+            message.channel.send({
+                files: ['..\\RamsayBot-2.0\\images\\bruh.jpg']
+            });
+        } else if (message.content.toLowerCase().includes('eat')) {
+            message.channel.send({
+                files: ['..\\RamsayBot-2.0\\images\\eat.png']
+            });
+        } else if (message.content.toLowerCase().includes('lamb')) {
+            message.channel.send({
+                files: ['..\\RamsayBot-2.0\\images\\lamb.jpg']
+            });
+        } else if (message.content.toLowerCase().includes('sausage')) {
+            message.channel.send({
+                files: ['..\\RamsayBot-2.0\\images\\sosig.jpg']
+            });
+        } 
+    }
+    // catch joe
+    if (message.content.toLowerCase().includes('who' && 'joe')) {
+        client.commands.get('joe').execute(message);
+    }
+    
 });
