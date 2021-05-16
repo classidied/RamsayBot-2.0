@@ -2,14 +2,16 @@
  * RamsayBot - The Best Gordon Ramsay-themed Discord Bot.
  * Sources: 
  * https://discordjs.guide/ -> basic discord.js guide
- * https://www.youtube.com/watch?v=BmKXBVdEV0g -> cleaner set up
+ * https://www.youtube.com/watch?v=BmKXBVdEV0g -> current set up
  * https://www.youtube.com/watch?v=AUOb9_aAk7U -> adv command handling: module exports stuff
  * https://discord.js.org/#/docs/main/stable/general/welcome -> discord.js API HAVE THIS OPEN ALWAYS
+ * https://playcode.io/new/ -> online js editor: use for small tests 
  * 
  * Notes:
  * - each command should have its own .js file
  * - the images are kinda big, might wanna resize through mspaint or something so it lessens clog
- * 
+ * - put data into databases aaaaaaaaaaaaaa
+ * - recipe f'n: look into whatever the heck a webhook is and try to see if you can pull from gr's website
  */
 /*
 - functions that need to be implemented:
@@ -20,6 +22,10 @@
 
     // theoretically (not even but whatever) non-controllable functions: joe catch
         bad math catch + insult, lamb, bruh, eat, sosig
+- additions:
+    - pg13 toggle -> current insult sheets are clean cause of yrhacks
+    - censor with funnies toggle -> maybe use ramsay's substitutions (ex. 'shit' -> 'shiitake mushrooms')
+        - https://www.youtube.com/watch?v=4PY0KzcyVJ8 start at 1:54
 */
 // importing env variables thing
 require('dotenv').config();
@@ -49,6 +55,7 @@ client.login(process.env.RAMSAYBOT_TOKEN);
 client.on('message', message => {
     // splitting up the message by prefix, command, and arguments
     if (message.content.startsWith(PREFIX)) {
+        // parsing commands
         // "..." is the spreader operator to take in all arguments
         const [cmd, ...args] = message.content
             .trim()
@@ -56,6 +63,7 @@ client.on('message', message => {
             // regex to eliminate extra spaces
             .split(/\s+/)
         ; 
+       
         // there's probably a better way to do this but it's this for now
         if (cmd === 'help') {
             client.commands.get('help').execute(message);
@@ -63,6 +71,9 @@ client.on('message', message => {
             client.commands.get('insult').execute(message);
         } else if (cmd === 'encourage') {
             client.commands.get('encourage').execute(message);
+        } else if (cmd === 'recipe') {
+            // concat args for recipe
+            client.commands.get('recipe').execute(message, args.join());
         }
     }
 });

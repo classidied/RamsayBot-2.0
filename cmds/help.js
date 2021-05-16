@@ -15,14 +15,14 @@ module.exports = {
         .setThumbnail('attachment://located.jpg')
         .addFields(
             { name: 'note:', value: // pfftt rip
-              'only help works right now hah'},
+              'functions that have asterisks next to them do not work'},
             { name: '**Text Commands**', value: 
               '`insult` - self explanatory' + 
               '\n`encourage` - pretend that someone cares about you' + 
-              '\n`recipe <optional-keyword>` - I send you my very own recipes!' +
-              '\n`swearjar <@member>` - figure out who needs to be put under cuss control'
+              '\n`recipe* <optional-keyword>` - I send you my very own recipes!' +
+              '\n`swearjar* <@member>` - figure out who needs to be put under cuss control'
             },
-            { name: '**Image Generation**', value: 
+            { name: '**Image Generation***', value: 
               '`alarm <@member>` - wake up your friends :eye: :eye:' + 
               '\n`idiot <@member>` - sandwich :)' +
               '\n`finally <@member1> <@member2>` - some good f`--` food' +
@@ -31,14 +31,14 @@ module.exports = {
               '\n`deepfry <@member> ` - classic deepfry' +
               '\n`lambsauce <keyword>` - you\'ll like this one, I promise'
             },
-            { name: '**Music**', value: 
+            { name: '**Music***', value: 
               '`play <keywords>`'
             },
-            { name: '**Info**', value: 
+            { name: '**Info***', value: 
               '`help` - display this help page' + 
               '\n`userinfo <@member>` - display user information'
             },
-            { name: '**Misc**', value: 
+            { name: '**Misc***', value: 
               '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
               '\n2. Who\'s joe?'
             }
