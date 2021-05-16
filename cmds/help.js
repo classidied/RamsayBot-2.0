@@ -22,14 +22,14 @@ module.exports = {
               '\n`recipe <optional-keyword>` - I send you my very own recipes!' +
               '\n`swearjar* <@member>` - figure out who needs to be put under cuss control'
             },
-            { name: '**Image Generation***', value: 
+            { name: '**Image Generation**', value: 
               '`alarm <@member>` - wake up your friends :eye: :eye:' + 
-              '\n`idiot <@member>` - sandwich :)' +
-              '\n`finally <@member1> <@member2>` - some good f`--` food' +
-              '\n`you <@member1> (up to 4 different members)` - :flushed:' +
-              '\n`raw <@member> ` - it\'s still mooing!' +
-              '\n`deepfry <@member> ` - classic deepfry' +
-              '\n`lambsauce <keyword>` - you\'ll like this one, I promise'
+              '\n`idiot* <@member>` - sandwich :)' +
+              '\n`finally* <@member1> <@member2>` - some good f`--` food' +
+              '\n`you* <@member1> (up to 4 different members)` - :flushed:' +
+              '\n`raw* <@member> ` - it\'s still mooing!' +
+              '\n`deepfry* <@member> ` - classic deepfry' +
+              '\n`lambsauce* <keyword>` - you\'ll like this one, I promise'
             },
             { name: '**Music***', value: 
               '`play <keywords>`'
