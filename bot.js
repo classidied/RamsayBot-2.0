@@ -34,6 +34,9 @@ const client = new Discord.Client();
 const PREFIX = "~"; 
 const fs = require('fs'); // to  into different files
 
+// creating canvas
+const Canvas = require('canvas');
+
 // yoinking different commands
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./cmds/').filter(file => file.endsWith('.js'));
@@ -80,12 +83,14 @@ client.on('message', message => {
             client.commands.get('recipe').execute(message, args.join());
         } else if (cmd === 'alarm') {
             client.commands.get('alarm').execute(message, args);
+        } else if (cmd === 'idiot') {
+            client.commands.get('idiot').execute(message, args);
         }
     }
+   
     /**
      * Non-controllable/functions without a prefix
      */
-
     // image reactions
     {
         if (message.content.toLowerCase().includes('bruh')) {
