@@ -56,13 +56,6 @@ function read(path, message, args) {
     })
 }
 
- // return member.user.displayAvatarURL({ format: 'jpg' });
-     /*
-    const link = args (user => {
-        return args.displayAvatarURL({format: 'png', dynamic: true });
-    });
-    */
-
 // getting user avatar function
 function av(member) {
     if (member.startsWith('<@') && member.endsWith('>')) {
@@ -70,20 +63,6 @@ function av(member) {
     }
     return member.displayAvatarURL({format: 'png', dynamic: true });
 }
-// get user function directly copied and pasted from the discord js guide oop
-function getUserFromMention(mention) {
-	if (!mention) console.log("not a user");
-    // removing tag
-	if (mention.startsWith('<@') && mention.endsWith('>')) {
-		mention = mention.slice(2, -1);
-        // checking for nickname
-		if (mention.startsWith('!')) {
-			mention = mention.slice(1);
-		}
-
-		return client.users.cache.get(mention);
-	}
-}
 
 // exporting methods
-module.exports = { r, read, av, getUserFromMention };
+module.exports = { r, read, av };

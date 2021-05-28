@@ -18,7 +18,7 @@
     // text/just not images: swearjar, userinfo, music reviews
 
     // image/video functions: idiot sandwich, finally, some good [redacted] food,
-        deepfry, "you, you, you, you-", raw
+        deepfry, "you, you, you, you-", raw, that new thing I pinned in the gaming bros channel that isaiah sent
 
     // theoretically (not even but whatever) non-controllable functions: bad math catch + insult
 - additions:
@@ -34,9 +34,6 @@ const client = new Discord.Client();
 const PREFIX = "~"; 
 const fs = require('fs'); // to  into different files
 
-// creating canvas
-const Canvas = require('canvas');
-
 // yoinking different commands
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./cmds/').filter(file => file.endsWith('.js'));
@@ -44,6 +41,8 @@ for (const file of commandFiles) {
     const command = require(`./cmds/${file}`);
     client.commands.set(command.name, command);
 }
+
+
 // code will run when the client is ready
 client.once('ready', () => {
 	console.log('Ready!');
@@ -68,9 +67,23 @@ client.on('message', message => {
             // regex to eliminate extra spaces
             .split(/\s+/)
         ; 
-        // testing: logging args to console
+        // testing: logging args to console + 
+        console.log("author: " + message.author);
         console.log(args);
-
+        // move functions file out of cmds and add this
+        function getUserFromMention(mention) {
+            if (!mention) return;
+        
+            if (mention.startsWith('<@') && mention.endsWith('>')) {
+                mention = mention.slice(2, -1);
+        
+                if (mention.startsWith('!')) {
+                    mention = mention.slice(1);
+                }
+        
+                return client.users.cache.get(mention);
+            }
+        }
         // there's probably a better way to do this but it's this for now
         if (cmd === 'help') {
             client.commands.get('help').execute(message);
@@ -84,7 +97,15 @@ client.on('message', message => {
         } else if (cmd === 'alarm') {
             client.commands.get('alarm').execute(message, args);
         } else if (cmd === 'idiot') {
-            client.commands.get('idiot').execute(message, args);
+            // make this a function and restructure
+            if (args[0]) {
+                const user = getUserFromMention(args[0]);
+                if (!user) {
+                    return message.reply('Please use a proper mention if you want to see someone elses avatar.');
+                }
+                const link = user.displayAvatarURL({ format: 'png', dynamic: true });
+                client.commands.get('idiot').execute(message, args, link);
+            }
         }
     }
    
