@@ -24,7 +24,7 @@ module.exports = {
             },
             { name: '**Image Generation**', value: 
               '`alarm <@member>` - wake up your friends :eye: :eye:' + 
-              '\n`idiot* <@member>` - sandwich :)' +
+              '\n`idiot <@member>` - sandwich :)' +
               '\n`finally* <@member1> <@member2>` - some good f`--` food' +
               '\n`you* <@member1> (up to 4 different members)` - :flushed:' +
               '\n`raw* <@member> ` - it\'s still mooing!' +
@@ -32,16 +32,16 @@ module.exports = {
               '\n`lambsauce* <keyword>` - you\'ll like this one, I promise'
             },
             { name: '**Music***', value: 
-              '`play <keywords>`'
+              '`p <keywords>`'
             },
             { name: '**Info***', value: 
               '`help` - display this help page' + 
               '\n`userinfo <@member>` - display user information'
             },
-            { name: '**Misc**', value: 
+            { name: '**Misc***', value: 
               '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
-              '\n2. Who\'s joe?*' +
-              '\n3. You suck at math'
+              '\n2. Who\'s joe?' +
+              '\n3. You suck at math*'
             }
           )
         message.channel.send(exampleEmbed); // sending the help page

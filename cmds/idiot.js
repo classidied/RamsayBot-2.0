@@ -8,7 +8,7 @@ module.exports = {
     name: 'idiot',
     description: 'sandwich :)',
     // not entirely sure why this needs to be async but we're running with it
-    async execute (message, args, link) {
+    async execute (message, args, user) {
         // creating the canvas
         const canvas = Canvas.createCanvas(400, 398);
         const context = canvas.getContext('2d');
@@ -16,13 +16,23 @@ module.exports = {
         
         // stretches image onto canvas
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
-        
-        const avatar = await Canvas.loadImage(link);
 
-        // drawing avatar 
-        context.drawImage(avatar, 110, 260, 100, 100);
-        // sending the photo
-        const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'idiot-sandwich.png');
-        message.channel.send(args, attachment);
+        // checking for argument
+        if (args[0]) {
+            if (!user) {
+                return message.reply('Please use a proper mention for this command!');
+            }
+            // getting user avatar url
+            const link = user.displayAvatarURL({ format: 'png', dynamic: true });
+            const avatar = await Canvas.loadImage(link);
+
+            // drawing avatar 
+            context.drawImage(avatar, 110, 260, 100, 100);
+            // sending the photo
+            const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'idiot-sandwich.png');
+            message.channel.send(args[0], attachment);
+        } else {
+            message.channel.send('Please mention a user!');
+        }   
     }
 }

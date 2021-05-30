@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
+
 
 // random function
 function r(num) {
@@ -56,13 +56,20 @@ function read(path, message, args) {
     })
 }
 
-// getting user avatar function
-function av(member) {
-    if (member.startsWith('<@') && member.endsWith('>')) {
-        member = member.slice(2, -1);
+// getting user from mention (yoinked directly from discord.js help guide)
+function getUser(mention, client) {
+    if (!mention) return;
+
+    if (mention.startsWith('<@') && mention.endsWith('>')) {
+        mention = mention.slice(2, -1);
+
+        if (mention.startsWith('!')) {
+            mention = mention.slice(1);
+        }
+
+        return client.users.cache.get(mention);
     }
-    return member.displayAvatarURL({format: 'png', dynamic: true });
 }
 
 // exporting methods
-module.exports = { r, read, av };
+module.exports = { r, read, getUser };
