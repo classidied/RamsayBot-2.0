@@ -15,7 +15,7 @@ module.exports = {
         .setThumbnail('attachment://lamb.jpg')
         .addFields(
             { name: 'note:', value: // pfftt rip
-              'functions that have asterisks next to them do not work'},
+              'functions with asterisks next to them haven\'t been implemented yet'},
             { name: '**Text Commands**', value: 
               '`insult` - self explanatory' + 
               '\n`encourage` - pretend that someone cares about you' + 
@@ -27,7 +27,7 @@ module.exports = {
               '\n`idiot <@member>` - sandwich :)' +
               '\n`finally <@member1> (up to 2 members)` - some good f`--` food' +
               '\n`you* <@member1> (up to 4 different members)` - :flushed:' + // this might be a vid
-              '\n`raw* <@member>` - it\'s **R**   ***A     W***' +
+              '\n`raw* <@member>` - it\'s ***R A W***' +
               '\n`deepfry* <@member>` - classic deepfry' +
               '\n`lambsauce* <keyword>` - you\'ll like this one, I promise' + // this is a vid
               '\n`merde* <@member1> (up to 4 different members)` - you suck if you got tagged' // this is a vid
@@ -35,11 +35,11 @@ module.exports = {
             { name: '**Music***', value: 
               '`p <keywords>`'
             },
-            { name: '**Info***', value: 
+            { name: '**Info**', value: 
               '`help` - display this help page' + 
               '\n`userinfo <@member>` - display user information'
             },
-            { name: '**Misc***', value: 
+            { name: '**Misc**', value: 
               '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
               '\n2. Who\'s joe?' +
               '\n3. You suck at math*' +
