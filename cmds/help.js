@@ -41,7 +41,8 @@ module.exports = {
             { name: '**Misc***', value: 
               '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
               '\n2. Who\'s joe?' +
-              '\n3. You suck at math*'
+              '\n3. You suck at math*' +
+              '\n4. Ligma'
             }
           )
         message.channel.send(exampleEmbed); // sending the help page
