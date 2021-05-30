@@ -1,8 +1,5 @@
 const Discord = require('discord.js');
 const Canvas = require('canvas');
-const client = new Discord.Client();
-// pulling functions file
-const fn = require('./functions');
 
 module.exports = {
     name: 'idiot',
@@ -27,7 +24,7 @@ module.exports = {
             const avatar = await Canvas.loadImage(link);
 
             // drawing avatar 
-            context.drawImage(avatar, 110, 260, 100, 100);
+            context.drawImage(avatar, 110, 260, 100, 100); // 1:x of tL, 2:y of tL, 3,4: width, height
             // sending the photo
             const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'idiot-sandwich.png');
             message.channel.send(args[0], attachment);

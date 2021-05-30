@@ -25,11 +25,12 @@ module.exports = {
             { name: '**Image Generation**', value: 
               '`alarm <@member>` - wake up your friends :eye: :eye:' + 
               '\n`idiot <@member>` - sandwich :)' +
-              '\n`finally* <@member1> <@member2>` - some good f`--` food' +
-              '\n`you* <@member1> (up to 4 different members)` - :flushed:' +
-              '\n`raw* <@member> ` - it\'s still mooing!' +
-              '\n`deepfry* <@member> ` - classic deepfry' +
-              '\n`lambsauce* <keyword>` - you\'ll like this one, I promise'
+              '\n`finally <@member1> (up to 2 members)` - some good f`--` food' +
+              '\n`you* <@member1> (up to 4 different members)` - :flushed:' + // this might be a vid
+              '\n`raw* <@member>` - it\'s **R**   ***A     W***' +
+              '\n`deepfry* <@member>` - classic deepfry' +
+              '\n`lambsauce* <keyword>` - you\'ll like this one, I promise' + // this is a vid
+              '\n`merde* <@member1> (up to 4 different members)` - you suck if you got tagged' // this is a vid
             },
             { name: '**Music***', value: 
               '`p <keywords>`'
@@ -42,7 +43,7 @@ module.exports = {
               '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
               '\n2. Who\'s joe?' +
               '\n3. You suck at math*' +
-              '\n4. Ligma'
+              '\n4. Ligma*'
             }
           )
         message.channel.send(exampleEmbed); // sending the help page

@@ -84,8 +84,15 @@ client.on('message', message => {
         } else if (cmd === 'alarm') {
             client.commands.get('alarm').execute(message, args);
         } else if (cmd === 'idiot') {
+            // client as param doesn't work in the module??
             const user = fn.getUser(args[0], client);
             client.commands.get('idiot').execute(message, args, user);
+        } else if (cmd === 'finally') {
+            const user1 = fn.getUser(args[0], client);
+            const user2 = fn.getUser(args[1], client);
+            client.commands.get('finally').execute(message, args, user1, user2);
+        } else if (cmd === 'raw') {
+            const user = fn.getUser(args[0], client);
         }
     }
    
@@ -122,7 +129,7 @@ client.on('message', message => {
     }
     // catch bad math
     if (message.content.includes('+' || '-' || '*' || '/' || '^')) {
-
+        client.commands.get('bad math').execute(message);
     }
     
 });
