@@ -93,6 +93,7 @@ client.on('message', message => {
             client.commands.get('finally').execute(message, args, user1, user2);
         } else if (cmd === 'raw') {
             const user = fn.getUser(args[0], client);
+            client.commands.get('raw').execute(message, args, user);
         }
     }
    
