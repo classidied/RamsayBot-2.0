@@ -37,8 +37,8 @@ module.exports = {
             },
             */
             { name: '**Info**', value: 
-              '`help` - display this help page' /* + 
-              '\n`userinfo <@member>` - display user information' */
+              '`help` - display this help page' + 
+              '\n`userinfo <@member>` - display user information'
             },
             { name: '**Misc**', value: 
               '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 

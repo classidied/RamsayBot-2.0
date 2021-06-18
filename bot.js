@@ -62,7 +62,6 @@ client.on('message', message => {
     // splitting up the message by prefix, command, and arguments
     if (message.content.startsWith(PREFIX)) {
         // parsing commands
-        // "..." is the spreader operator to take in all arguments
         const [cmd, ...args] = message.content
             .trim()
             .substring(PREFIX.length)
@@ -72,34 +71,14 @@ client.on('message', message => {
         // testing: logging args to console 
         console.log("author: " + message.author);
         console.log(args);
-       
-        // there's probably a better way to do this but it's this for now 
-        if (cmd === 'help') {
-            client.commands.get('help').execute(message);
-        } else if (cmd === 'insult') {
-            client.commands.get('insult').execute(message);
-        } else if (cmd === 'encourage') {
-            client.commands.get('encourage').execute(message);
-        } else if (cmd === 'recipe') {
-            // concat args for recipe
-            client.commands.get('recipe').execute(message, args.join());
-        } else if (cmd === 'alarm') {
-            client.commands.get('alarm').execute(message, args);
-        } else if (cmd === 'idiot') {
-            // client as param doesn't work in the module??
-            const user = fn.getUser(args[0], client);
-            client.commands.get('idiot').execute(message, args, user);
-        } else if (cmd === 'finally1') {
-            const user1 = fn.getUser(args[0], client);
-            const user2 = fn.getUser(args[1], client);
-            client.commands.get('finally1').execute(message, args, user1, user2);
-        } else if (cmd === 'finally2') {
-            client.commands.get('finally2').execute(message, args);
-        }  else if (cmd === 'raw') {
-            const user = fn.getUser(args[0], client);
-            client.commands.get('raw').execute(message, args, user);
-        } else if (cmd === 'userinfo') {
-            client.commands.get('userinfo').execute(message, args);
+
+        if (!client.commands.has(cmd)) return;
+        // executing commands dynamically
+        try {
+            client.commands.get(cmd).execute(message, args, client);
+        } catch (error) {
+            console.error(error);
+            message.reply('I may or may not have thrown that command out into the trash, like my respect for Jamie Oliver--');
         }
     }
    
@@ -149,7 +128,5 @@ client.on('message', message => {
             
         }
     }
-    
-    
-    
+
 });

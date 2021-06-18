@@ -1,20 +1,22 @@
 const Discord = require('discord.js');
+const fn = require('./functions');
 
 module.exports = {
     name: 'userinfo',
     description: 'who are you?',
-    execute(message, args) {
+    execute(message, args, client) {
+        const user = fn.getUser(args[0], client);
         const userinfoEmbed = new Discord.MessageEmbed()
         .setColor('#2596be')
-        .setTitle(args + "'s secrets:")
+        .setTitle(user.username + "'s secrets:")
+        .setThumbnail(user.displayAvatarURL({ format: 'png', dynamic: true }))
         .addFields(
-            { name: 'test!', value: 'hehe'}
+            { name: 'Tag:', value: user.tag },
+            { name: 'Created on:', value: user.createdAt },
+            { name: 'Potential last words:', value: user.lastMessage },
+            { name: 'Presence', value: user.presence }
         )
-        /**
-         * add:
-         * swearjar stats
-         * 
-         */
+        .setTimestamp()
         // sending the embed
         message.channel.send(userinfoEmbed);
     }

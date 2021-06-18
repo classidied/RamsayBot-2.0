@@ -1,11 +1,15 @@
 const Discord = require('discord.js');
 const Canvas = require('canvas');
+// pulling functions file
+const fn = require('./functions');
 
 module.exports = {
     name: 'idiot',
     description: 'sandwich :)',
     // not entirely sure why this needs to be async but we're running with it
-    async execute (message, args, user) {
+    async execute (message, args, client) {
+        const user = fn.getUser(args[0], client);
+
         // creating the canvas
         const canvas = Canvas.createCanvas(400, 398);
         const context = canvas.getContext('2d');
