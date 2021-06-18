@@ -87,10 +87,10 @@ client.on('message', message => {
             // client as param doesn't work in the module??
             const user = fn.getUser(args[0], client);
             client.commands.get('idiot').execute(message, args, user);
-        } else if (cmd === 'finally') {
+        } else if (cmd === 'finally1') {
             const user1 = fn.getUser(args[0], client);
             const user2 = fn.getUser(args[1], client);
-            client.commands.get('finally').execute(message, args, user1, user2);
+            client.commands.get('finally1').execute(message, args, user1, user2);
         } else if (cmd === 'raw') {
             const user = fn.getUser(args[0], client);
             client.commands.get('raw').execute(message, args, user);

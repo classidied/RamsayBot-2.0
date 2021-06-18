@@ -4,7 +4,7 @@ module.exports = {
     name: 'help',
     description: 'Displays help page',
     execute(message) {
-        const exampleEmbed = new Discord.MessageEmbed()
+        const helpPage = new Discord.MessageEmbed()
         .setColor('#2596be') // find different embed color maybe? 
         .setTitle('Hello! I\'m Gordon Ramsay!')
         // @collaborators, make sure your project folder is named RamsayBot-2.0 or this won't work for you
@@ -46,6 +46,6 @@ module.exports = {
               '\n4. Ligma*'
             }
           )
-        message.channel.send(exampleEmbed); // sending the help page
+        message.channel.send(helpPage); // sending the help page
     }
 }

@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const Canvas = require('canvas');
 
 module.exports = {
-    name: 'finally',
+    name: 'finally1',
     description: 'some good f`--` food',
     async execute(message, args, user1, user2) {
         // creating the canvas
