@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 
-
 // random function
 function r(num) {
     return Math.floor(Math.random()*num);
@@ -66,10 +65,22 @@ function getUser(mention, client) {
         if (mention.startsWith('!')) {
             mention = mention.slice(1);
         }
-
         return client.users.cache.get(mention);
     }
 }
 
+// adjust font size based on the length of text
+function fontSize(canvas, text, defSize) {
+	const context = canvas.getContext('2d');
+	// default font size
+	let fontSize = defSize;
+    // decrementing font size until it fits
+    do 
+    {
+        context.font = `${fontSize -= 1}px sans-serif`;
+    } while (context.measureText(text).width > canvas.width - 5); 
+	return fontSize;
+};
+
 // exporting methods
-module.exports = { r, read, getUser };
+module.exports = { r, read, getUser, fontSize };

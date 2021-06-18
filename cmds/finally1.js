@@ -3,7 +3,7 @@ const Canvas = require('canvas');
 
 module.exports = {
     name: 'finally1',
-    description: 'some good f`--` food',
+    description: 'image mod',
     async execute(message, args, user1, user2) {
         // creating the canvas
         const canvas = Canvas.createCanvas(380, 426);

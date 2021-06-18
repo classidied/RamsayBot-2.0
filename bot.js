@@ -16,9 +16,11 @@
 /*
 - functions that need to be implemented:
     // text/just not images: swearjar, userinfo, music reviews
+        - swearjar will be the ramsaybot currency system (number of f's, number of donkeys maybe)
 
-    // image/video functions: idiot sandwich, finally, some good [redacted] food,
-        deepfry, "you, you, you, you-", raw, that new thing I pinned in the gaming bros channel that isaiah sent
+    // image/video functions: 
+        deepfry, "you, you, you, you-", raw, that new thing I pinned in the gaming bros channel that isaiah sent,
+        finally2
 
     // theoretically (not even but whatever) non-controllable functions: bad math catch + insult
 - additions:
@@ -32,7 +34,7 @@ require('dotenv').config();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const PREFIX = "~"; 
-const fs = require('fs'); // to  into different files
+const fs = require('fs'); // to go into different files
 
 // yoinking different commands
 client.commands = new Discord.Collection();
@@ -91,9 +93,13 @@ client.on('message', message => {
             const user1 = fn.getUser(args[0], client);
             const user2 = fn.getUser(args[1], client);
             client.commands.get('finally1').execute(message, args, user1, user2);
-        } else if (cmd === 'raw') {
+        } else if (cmd === 'finally2') {
+            client.commands.get('finally2').execute(message, args);
+        }  else if (cmd === 'raw') {
             const user = fn.getUser(args[0], client);
             client.commands.get('raw').execute(message, args, user);
+        } else if (cmd === 'userinfo') {
+            client.commands.get('userinfo').execute(message, args);
         }
     }
    
@@ -124,13 +130,26 @@ client.on('message', message => {
             });
         } 
     }
-    // catch joe
-    if (message.content.toLowerCase().includes('who' && 'joe')) {
-        client.commands.get('joe').execute(message);
-    }
     // catch bad math
     if (message.content.includes('+' || '-' || '*' || '/' || '^')) {
         client.commands.get('bad math').execute(message);
     }
+    // 6th grader jokes
+    {
+        // catch joe
+        if (message.content.toLowerCase().includes('who' && 'joe')) {
+            client.commands.get('joe').execute(message);
+        }
+        // catch candice
+        else if (message.content.toLowerCase().includes('who' && 'candice')) {
+
+        }
+        // catch ligma
+        else if (message.content.toLowerCase().includes('what' && 'ligma')) {
+            
+        }
+    }
+    
+    
     
 });

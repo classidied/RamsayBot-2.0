@@ -6,6 +6,9 @@ module.exports = {
     description: 'ramsay, a saint among jesus himself',
     execute(message) {
         message.delete(); 
+
+        // make a list of things to randomly choose from? 
+        // also maybe group all of the 6th grader jokes in here
         message.channel.send('Watch out bro...');
     }
 }
