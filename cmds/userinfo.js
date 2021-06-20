@@ -14,7 +14,6 @@ module.exports = {
             { name: 'Tag:', value: user.tag },
             { name: 'Created on:', value: user.createdAt },
             { name: 'Potential last words:', value: user.lastMessage },
-            { name: 'Presence', value: user.presence }
         )
         .setTimestamp()
         // sending the embed

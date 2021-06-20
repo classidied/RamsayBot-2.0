@@ -23,8 +23,8 @@ module.exports = {
             { name: '**Image Generation**', value: 
               '`alarm <@member>` - wake up your friends :eye: :eye:' + 
               '\n`idiot <@member>` - sandwich :)' +
-              '\n`finally1 <@member1> (up to 2 members)` - image mod' +
-              '\n`finally2 <keyword-1> <keyword-2>` - text mod' /* +
+              '\n`finally <@member1> (up to 2 members)` - image mod' +
+              '\n`finally <keyword-1> <keyword-2>` - text mod' /* +
               '\n`you* <@member1> (up to 4 different members)` - :flushed:' + // this might be a vid
               '\n`raw* <@member>` - it\'s ***R A W***' +
               '\n`deepfry* <@member>` - classic deepfry' +

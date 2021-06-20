@@ -19,8 +19,7 @@
         - swearjar will be the ramsaybot currency system (number of f's, number of donkeys maybe)
 
     // image/video functions: 
-        deepfry, "you, you, you, you-", raw, that new thing I pinned in the gaming bros channel that isaiah sent,
-        finally2
+        deepfry, "you, you, you, you-", raw, that new thing I pinned in the gaming bros channel that isaiah sent
 
     // theoretically (not even but whatever) non-controllable functions: bad math catch + insult
 - additions:
@@ -43,8 +42,7 @@ for (const file of commandFiles) {
     const command = require(`./cmds/${file}`);
     client.commands.set(command.name, command);
 }
-// pulling functions file
-const fn = require('./cmds/functions');
+
 // code will run when the client is ready
 client.once('ready', () => {
 	console.log('Ready!');
@@ -65,7 +63,7 @@ client.on('message', message => {
         const [cmd, ...args] = message.content
             .trim()
             .substring(PREFIX.length)
-            // regex to eliminate extra spaces
+            // regex to eliminate extra spaces -> use commas if they're there?
             .split(/\s+/)
         ; 
         // testing: logging args to console 

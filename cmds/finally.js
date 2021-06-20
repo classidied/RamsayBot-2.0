@@ -52,7 +52,7 @@ module.exports = {
         } else { // text
             // checking for arguments
             if (!(args[0]) || !(args[1])) {
-                message.channel.send("Please enter 2 keywords, seperated by a space. Ex: ~finally2 quality memes");
+                message.channel.send("Please enter 2 keywords, seperated by a space. Ex: ~finally quality memes");
             } else {
                 // creating the canvas
                 const canvas = Canvas.createCanvas(450, 251);
