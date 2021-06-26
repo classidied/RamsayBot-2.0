@@ -69,6 +69,15 @@ function getUser(mention, client) {
     }
 }
 
+// getting user avatar link
+function getAv(message, user) {
+    if (!user) {
+        return message.reply('Please use a proper mention for this command!');
+    }
+    // getting user avatar url
+    return user.displayAvatarURL({ format: 'png', dynamic: true });
+}
+
 // adjust font size based on the length of text
 function fontSize(canvas, text, defSize) {
 	const context = canvas.getContext('2d');
@@ -83,4 +92,4 @@ function fontSize(canvas, text, defSize) {
 };
 
 // exporting methods
-module.exports = { r, read, getUser, fontSize };
+module.exports = { r, read, getUser, getAv, fontSize };

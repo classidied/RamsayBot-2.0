@@ -21,25 +21,13 @@ module.exports = {
 
             // checking for args
             if (args[0]) {
-                if (!user1) {
-                    return message.reply('Please use a proper mention for this command!');
-                }
-                // getting 1st user avatar url
-                const link1 = user1.displayAvatarURL({ format: 'jpg', dynamic: true });
-                const av1 = await Canvas.loadImage(link1);
-
+                const av1 = await Canvas.loadImage(fn.getAv(message, user1));
                 // drawing avatar 
                 context.drawImage(av1, 150, 70, 110, 110);
 
                 // checking for 2nd user
                 if (args[1]) {
-                    if (!user2) {
-                        return message.reply('Please use a proper mention for this command!');
-                    }
-                    // getting 2nd user avatar url
-                    const link2 = user2.displayAvatarURL({ format: 'jpg', dynamic: true });
-                    const av2 = await Canvas.loadImage(link2);
-
+                    const av2 = await Canvas.loadImage(fn.getAv(message, user2));
                     // drawing avatar 
                     context.drawImage(av2, 115, 270, 110, 110);
                 }
@@ -48,7 +36,7 @@ module.exports = {
             }
             // sending the photo
             const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'finally.jpg');
-            message.channel.send(args, attachment);
+            message.channel.send(args.join(), attachment);
         } else { // text
             // checking for arguments
             if (!(args[0]) || !(args[1])) {

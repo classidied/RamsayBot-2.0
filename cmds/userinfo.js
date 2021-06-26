@@ -10,6 +10,7 @@ module.exports = {
         .setColor('#2596be')
         .setTitle(user.username + "'s secrets:")
         .setThumbnail(user.displayAvatarURL({ format: 'png', dynamic: true }))
+        /**not done what else to do  */
         .addFields(
             { name: 'Tag:', value: user.tag },
             { name: 'Created on:', value: user.createdAt },
