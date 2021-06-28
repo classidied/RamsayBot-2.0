@@ -8,7 +8,20 @@ module.exports = {
         message.delete(); 
 
         // make a list of things to randomly choose from? 
-        message.channel.send('Watch out bro...');
+        var warnings = [
+            'Watch out bro...',
+            'yikes...',
+            'The world is a dangerous place',
+            'Be careful buddy...',
+            'you shouldn\'t',
+            'don\'t do that',
+            'oof',
+            ':eyes:',
+            ':eye: :eye:',
+            'uh oh',
+            'you goofed'
+        ]
+        message.channel.send(warnings[fn.r(warnings.length)]);
         // also maybe group all of the 6th grader jokes in here
     }
 }
