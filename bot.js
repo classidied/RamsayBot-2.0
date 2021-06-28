@@ -72,22 +72,22 @@ client.on('message', message => {
         if (message.content.toLowerCase().includes('bruh')) {
             if (message.author.bot) return;
             message.channel.send({
-                files: ['..\\RamsayBot-2.0\\images\\bruh.jpg']
+                files: ['./images/bruh.jpg']
             });
         } else if (message.content.toLowerCase().includes('eat')) {
             if (message.author.bot) return;
             message.channel.send({
-                files: ['..\\RamsayBot-2.0\\images\\eat.png']
+                files: ['./images/eat.png']
             });
         } else if (message.content.toLowerCase().includes('lamb')) {
             if (message.author.bot) return;
             message.channel.send({
-                files: ['..\\RamsayBot-2.0\\images\\lamb.jpg']
+                files: ['./images/lamb.jpg']
             });
         } else if (message.content.toLowerCase().includes('sausage')) {
             if (message.author.bot) return;
             message.channel.send({
-                files: ['..\\RamsayBot-2.0\\images\\sosig.jpg']
+                files: ['./images/sosig.jpg']
             });
         } 
     }

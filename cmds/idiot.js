@@ -13,7 +13,7 @@ module.exports = {
             // creating the canvas
             const canvas = Canvas.createCanvas(400, 398);
             const context = canvas.getContext('2d');
-            const background = await Canvas.loadImage('..\\RamsayBot-2.0\\images\\idiot.png');
+            const background = await Canvas.loadImage('./images/idiot.png');
             
             // stretches image onto canvas
             context.drawImage(background, 0, 0, canvas.width, canvas.height);

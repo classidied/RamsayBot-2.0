@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args) {
         message.channel.send(args, {
             // this gif is not top notch we can do better than this probably also use a web link
-            files: ['..\\RamsayBot-2.0\\images\\alarm.gif']
+            files: ['./images/alarm.gif']
         });
     }
 }

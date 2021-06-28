@@ -14,7 +14,7 @@ module.exports = {
             // creating the canvas
             const canvas = Canvas.createCanvas(380, 426);
             const context = canvas.getContext('2d');
-            const background = await Canvas.loadImage('..\\RamsayBot-2.0\\images\\finally.jpg');
+            const background = await Canvas.loadImage('./images/finally.jpg');
             
             // stretches image onto canvas
             context.drawImage(background, 0, 0, canvas.width, canvas.height);
@@ -45,7 +45,7 @@ module.exports = {
                 // creating the canvas
                 const canvas = Canvas.createCanvas(450, 251);
                 const context = canvas.getContext('2d');
-                const background = await Canvas.loadImage('..\\RamsayBot-2.0\\images\\finally2.png');
+                const background = await Canvas.loadImage('./images/finally2.png');
                 
                 // stretches image onto canvas
                 context.drawImage(background, 0, 0, canvas.width, canvas.height);
@@ -61,11 +61,11 @@ module.exports = {
                 console.log('height: ' + fn.fontSize(canvas, text, 28)); // pixel height of text is font size
                 
                 // backing (note: text (x,y) is bottom left, rect (x,y) is top left)
-                context.fillRect(x-1, y - fn.fontSize(canvas, text, 25) + 2, context.measureText('finally').width+1, fn.fontSize(canvas, text, 25) + 2);
+                context.fillRect(x-1, y - fn.fontSize(canvas, text, 25) + 2, context.measureText('finally,').width+1, fn.fontSize(canvas, text, 25) + 2);
                 context.fillRect(x-1, y+2, context.measureText(text).width, fn.fontSize(canvas, text, 25) + 8); 
                 
                 context.fillStyle = '#ffffff';
-                context.fillText('finally', x, y);
+                context.fillText('finally,', x, y);
                 context.fillText(text, x, y + fn.fontSize(canvas, text, 25) + 2);
 
                 // sending the photo
