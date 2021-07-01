@@ -29,7 +29,7 @@ module.exports = {
               '\n`raw* <@member>` - it\'s ***R A W***' +
               '\n`deepfry* <@member>` - classic deepfry' +
               '\n`lambsauce* <keyword>` - you\'ll like this one, I promise' + // this is a vid
-              '\n`merde* <@member1> (up to 4 different members)` - you suck if you got tagged' // this is a vid */
+              '\n`poop* <@member1> (up to 4 different members)` - you suck if you got tagged' // this is a vid */
             },
             /*
             { name: '**Music***', value: 

@@ -60,7 +60,7 @@ client.on('message', message => {
             client.commands.get(cmd).execute(message, args, client);
         } catch (error) {
             console.error(error);
-            message.reply('I may or may not have thrown that command out into the trash, like my respect for Jamie Oliver--');
+            message.reply('that command is a donkey');
         }
     }
    
