@@ -30,7 +30,7 @@ for (const file of commandFiles) {
 // code will run when the client is ready
 client.once('ready', () => {
 	console.log('Ready!');
-    client.user.setActivity("with your mental breaking point");
+    client.user.setActivity("with your mental breaking point | ~help");
 });
 
 // login to discord
@@ -87,14 +87,11 @@ client.on('message', message => {
         } else if (message.content.toLowerCase().includes('sausage')) {
             if (message.author.bot) return;
             message.channel.send({
-                files: ['./images/sosig.jpg']
+                files: ['./images/sausage.jpg']
             });
         } 
     }
-    // catch bad math
-    if (message.content.includes('+' || '-' || '*' || '/' || '^')) {
-        client.commands.get('math').execute(message);
-    }
+    
     // 6th grader jokes
     {
         // catch joe
@@ -103,11 +100,11 @@ client.on('message', message => {
         }
         // catch candice
         else if (message.content.toLowerCase().includes('who' && 'candice')) {
-
+            client.commands.get('joe').execute(message);
         }
         // catch ligma
         else if (message.content.toLowerCase().includes('what' && 'ligma')) {
-            
+            client.commands.get('joe').execute(message);
         }
     }
 

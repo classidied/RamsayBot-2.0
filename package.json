@@ -1,19 +1,33 @@
 {
-  "name": "RamsayBot",
+  "name": "ramsaybot",
   "version": "1.0.0",
-  "description": "",
+  "description": "(work in progress aaaaaaaaaaaaaaa)\r With prefix `~`, Ramsay Bot is readied to cure or deepen your depression at your beck and will. Now that he is a bot, he will always be with you. You cannot escape.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "classidied",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/opus": "github:discordjs/opus",
+    "@discordjs/voice": "github:discordjs/voice",
     "canvas": "^2.8.0",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.0.1",
     "dotenv": "^9.0.2",
+    "ffmpeg-static": "^4.4.0",
     "sequelize": "^6.6.2",
-    "sqlite3": "^5.0.2"
-  }
+    "shelljs": "^0.8.4",
+    "sqlite3": "^4.2.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/classidied/RamsayBot-2.0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/classidied/RamsayBot-2.0/issues"
+  },
+  "homepage": "https://github.com/classidied/RamsayBot-2.0#readme"
 }
