@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageAttachment } = require('discord.js');
 const Canvas = require('canvas');
 // pulling functions file
 const fn = require('./functions');
@@ -35,8 +35,8 @@ module.exports = {
                 message.channel.send('Please mention at least one user!');
             }
             // sending the photo
-            const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'finally.jpg');
-            message.channel.send(args.join(), attachment);
+            const attachment = new MessageAttachment(canvas.toBuffer(), 'finally.jpg');
+            message.channel.send({ content: args.join(), files: attachment });
         } else { // text
             // checking for arguments
             if (!(args[0]) || !(args[1])) {
@@ -69,8 +69,8 @@ module.exports = {
                 context.fillText(text, x, y + fn.fontSize(canvas, text, 25) + 2);
 
                 // sending the photo
-                const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'finally2.png');
-                message.channel.send(attachment);
+                const attachment = new MessageAttachment(canvas.toBuffer(), 'finally2.png');
+                message.channel.send({ files: [attachment] });
             } 
         }
     }

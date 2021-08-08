@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const { MessageAttachment, MessageEmbed }= require('discord.js');
 const fn = require('./functions');
 
 module.exports = {
@@ -6,7 +6,7 @@ module.exports = {
     description: 'who are you?',
     execute(message, args, client) {
         const user = fn.getUser(args[0], client);
-        const userinfoEmbed = new Discord.MessageEmbed()
+        const userinfoEmbed = new MessageEmbed()
         .setColor('#2596be')
         .setTitle(user.username + "'s secrets:")
         .setThumbnail(user.displayAvatarURL({ format: 'png', dynamic: true }))
@@ -18,6 +18,6 @@ module.exports = {
         )
         .setTimestamp()
         // sending the embed
-        message.channel.send(userinfoEmbed);
+        message.channel.send({ embeds: userinfoEmbed });
     }
 }

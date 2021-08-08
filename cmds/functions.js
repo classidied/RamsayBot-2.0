@@ -20,7 +20,7 @@ function read(path, message, args) {
         let options = [];
         if (args.length === 0) {
             var chosen = lines[r(lines.length)]
-            message.channel.send(chosen);
+            message.channel.send({ content: chosen });
         } else {
             // when the bulk of a function is dedicated to one command asdfhkjsf
             // linear search through data for matching keywords
@@ -32,16 +32,16 @@ function read(path, message, args) {
             }
             // choosing at most 3 random data points to send
             if (options.length === 0) {
-                message.channel.send("It appears that I do not have a recipe for `" + args + 
-                "`.\nIf you wish, you can try again using less keywords or specificity.");
+                message.channel.send({ content: "It appears that I do not have a recipe for `" + args + 
+                "`.\nIf you wish, you can try again using less keywords or specificity." });
             } else if (options.length <= 3) {
-                message.channel.send("Here are some recipes that have matched your input: \n");
+                message.channel.send({ content: "Here are some recipes that have matched your input: \n" });
                 for (let i = 0; i < options.length; i++) {
                     message.channel.send(options[i] + "\n");
                 }
-                message.channel.send("If you screw up making one of my recipes, I will know.");
+                message.channel.send({ content: "If you screw up making one of my recipes, I will know." });
             } else if (options.length > 3) {
-                message.channel.send("Here are some recipes that have matched your input: \n");
+                message.channel.send({ content: "Here are some recipes that have matched your input: \n" });
                 for (let j = 0; j < 3; j++) {
                    // choosing random recipe
                    var temp = r(options.length);
@@ -49,7 +49,7 @@ function read(path, message, args) {
                    // removing sent recipe to prevent duplicate
                    options.splice(temp, 1);
                }
-               message.channel.send("If you screw up making one of my recipes, I will know.");
+               message.channel.send({ content: "If you screw up making one of my recipes, I will know." });
             }
         }
     })

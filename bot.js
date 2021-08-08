@@ -1,32 +1,36 @@
 /**
  * RamsayBot - The Best Gordon Ramsay-themed Discord Bot.
  * Sources: 
- * https://discordjs.guide/ -> basic discord.js guide
- * https://www.youtube.com/watch?v=BmKXBVdEV0g -> current set up
- * https://www.youtube.com/watch?v=AUOb9_aAk7U -> adv command handling: module exports stuff
+ * https://discordjs.guide/ 
  * https://discord.js.org/#/docs/main/stable/general/welcome -> discord.js API HAVE THIS OPEN ALWAYS
- * https://playcode.io/new/ -> online js editor: use for small tests 
  */
 
-// importing env variables thing
-require('dotenv').config();
+// token var 
+const { token } = require('./config.json');
 // creating client object
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { Client, Collection, Intents } = require('discord.js');
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const fs = require('fs'); // to go into different files
 const Sequelize = require('sequelize'); // sequelize + sqlite3 for databases
 
 const PREFIX = "~"; 
 
-// yoinking different commands
-client.commands = new Discord.Collection();
+// yoinking from commands
+client.commands = new Collection();
 const commandFiles = fs.readdirSync('./cmds/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
     const command = require(`./cmds/${file}`);
     client.commands.set(command.name, command);
 }
-
+/*/ yoinking from voice 
+client.voice = new Collection();
+const voiceFiles = fs.readdirSync('./voice/').filter(file => file.endsWith('.js'));
+for (const file of voiceFiles) {
+    const vCommand = require(`./voice/${file}`);
+    client.voice.set(vCommand.name, vCommand);
+}
+*/
 // code will run when the client is ready
 client.once('ready', () => {
 	console.log('Ready!');
@@ -34,10 +38,10 @@ client.once('ready', () => {
 });
 
 // login to discord
-client.login(process.env.RAMSAYBOT_TOKEN);
+client.login(token);
 
 // logs every message sent to the server
-client.on('message', message => {
+client.on('messageCreate', message => {
     /**
      * Controllable/functions with a prefix
      */
@@ -54,13 +58,14 @@ client.on('message', message => {
         console.log("author: " + message.author);
         console.log(args);
 
-        if (!client.commands.has(cmd)) return;
+        if (!client.commands.has(cmd) || !client.voice.has(cmd)) return;
         // executing commands dynamically
         try {
             client.commands.get(cmd).execute(message, args, client);
+            // client.voice.get(cmd).execute(message, args, client);
         } catch (error) {
             console.error(error);
-            message.reply('that command is a donkey');
+            message.reply({ content: 'That command is a donkey!', ephemeral: true });
         }
     }
    
