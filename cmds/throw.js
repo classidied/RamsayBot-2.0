@@ -1,8 +1,5 @@
-const Discord = require('discord.js');
 // pulling functions file
 const fn = require('./functions');
-// shell?
-var shell = require('shelljs')
 
 module.exports = {
     name: 'throw',
@@ -26,6 +23,7 @@ module.exports = {
                 dirName.concat(String(Math.floor(Math.random() * 10)));
             } 
             /*
+            **removed shell.js as a dep
             console.log('dirName: ' + dirName)
             shell.ls('-d');
             shell.mkdir(dirName)

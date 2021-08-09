@@ -12,7 +12,7 @@ const { Client, Collection, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const fs = require('fs'); // to go into different files
-const Sequelize = require('sequelize'); // sequelize + sqlite3 for databases
+// const Sequelize = require('sequelize'); // sequelize + sqlite3 for databases **removed both of these
 
 const PREFIX = "~"; 
 
@@ -58,7 +58,7 @@ client.on('messageCreate', message => {
         console.log("author: " + message.author);
         console.log(args);
 
-        if (!client.commands.has(cmd) || !client.voice.has(cmd)) return;
+        if (!client.commands.has(cmd)) return;
         // executing commands dynamically
         try {
             client.commands.get(cmd).execute(message, args, client);
