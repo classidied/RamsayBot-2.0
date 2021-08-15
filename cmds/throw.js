@@ -22,13 +22,7 @@ module.exports = {
             for (var i = 0; i < 6; i++) {
                 dirName.concat(String(Math.floor(Math.random() * 10)));
             } 
-            /*
-            **removed shell.js as a dep
-            console.log('dirName: ' + dirName)
-            shell.ls('-d');
-            shell.mkdir(dirName)
-            shell.ls('-d');
-            */
+            
             // mapping coords for all frames
             const mapping = [ 
                 [720, 320, 1280, 720], // 0 - initial burger
