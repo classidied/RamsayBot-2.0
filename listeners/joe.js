@@ -5,9 +5,6 @@ module.exports = {
     name: 'joe',
     description: 'ramsay, a saint among jesus himself',
     execute(message) {
-        message.delete(); 
-
-        // make a list of things to randomly choose from? 
         var warnings = [
             'Watch out bro...',
             'yikes...',
@@ -21,7 +18,10 @@ module.exports = {
             'uh oh',
             'you goofed'
         ]
-        message.channel.send({ content: warnings[fn.r(warnings.length)] });
-        // also maybe group all of the 6th grader jokes in here
+        if (message.content.toLowerCase().includes(("who" || "what") && ("joe" || "candice" || "ligma"))) {
+            message.delete(); 
+            message.channel.send({ content: warnings[fn.r(warnings.length)] });
+        }
+        
     }
 }

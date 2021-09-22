@@ -1,5 +1,4 @@
 # Ramsay Bot - The Best Gordon Ramsay-themed Discord Bot.
-(work in progress aaaaaaaaaaaaaaa)
 With prefix `~`, Ramsay Bot is readied to cure or deepen your depression at your beck and will. Now that he is a bot, he will always be with you. You cannot escape. 
 
 ## Commands
