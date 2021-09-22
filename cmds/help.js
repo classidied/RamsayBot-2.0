@@ -28,7 +28,7 @@ module.exports = {
             '\n`raw* <@member>` - it\'s ***R A W***' +
             '\n`deepfry* <@member>` - classic deepfry' +
             '\n`lambsauce* <keyword>` - you\'ll like this one, I promise' + // this is a vid
-            '\n`poop* <@member1> (up to 4 different members)` - you suck if you got tagged' // this is a vid */
+            '\n`throw* <@member>` - you suck if you got tagged' // this is a vid */
           },
           /*
           { name: '**Music***', value: 
@@ -41,9 +41,7 @@ module.exports = {
           },
           { name: '**Misc**', value: 
             '1. There are certain words that Ramsay Bot responds to with a reaction image. Can you find them all?' + 
-            '\n2. Who\'s joe?' /* +
-            '\n3. You suck at math*' +
-            '\n4. Ligma*' */
+            '\n2. Who\'s joe?'
           }
         )
       message.channel.send({ embeds: [helpPage], files: [chad, lamb] }); // sending the help page

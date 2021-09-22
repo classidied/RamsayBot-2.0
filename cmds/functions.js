@@ -1,5 +1,3 @@
-const Discord = require('discord.js');
-
 // random function
 function r(num) {
     return Math.floor(Math.random()*num);
