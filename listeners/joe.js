@@ -1,5 +1,5 @@
 // pulling functions file
-const fn = require('./functions');
+const fn = require('../cmds/functions');
 
 module.exports = {
     name: 'joe',

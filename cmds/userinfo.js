@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const fn = require('./!functions');
+const fn = require('./functions.js');
 
 module.exports = {
     name: 'userinfo',
@@ -8,7 +8,7 @@ module.exports = {
         if (args[0]) {
             const user = fn.getUser(args[0], client);
             const userinfo = new MessageEmbed()
-            .setColor('#ff0000') 
+            .setColor('#2596be') 
             .setTitle(user.username + "'s secrets")
             .setThumbnail(`${fn.getAv(message, user)}`)
             .addFields(

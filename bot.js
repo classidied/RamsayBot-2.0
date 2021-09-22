@@ -23,14 +23,7 @@ for (const file of commandFiles) {
     const command = require(`./cmds/${file}`);
     client.commands.set(command.name, command);
 }
-/*/ yoinking from voice 
-client.voice = new Collection();
-const voiceFiles = fs.readdirSync('./voice/').filter(file => file.endsWith('.js'));
-for (const file of voiceFiles) {
-    const vCommand = require(`./voice/${file}`);
-    client.voice.set(vCommand.name, vCommand);
-}
-*/
+
 // code will run when the client is ready
 client.once('ready', () => {
 	console.log('Ready!');
@@ -62,7 +55,6 @@ client.on('messageCreate', message => {
         // executing commands dynamically
         try {
             client.commands.get(cmd).execute(message, args, client);
-            // client.voice.get(cmd).execute(message, args, client);
         } catch (error) {
             console.error(error);
             message.reply({ content: 'That command is a donkey!', ephemeral: true });
